@@ -11,8 +11,7 @@ Yu Zeng<sup>1</sup>, Zhe Lin<sup>2</sup>, Vishal M. Patel<sup>1</sup>
 
 [[Paper]]() [[Results]](#results) [[Code]](https://github.com/zengxianyu/sketchedit) [[Demo]]() [[Supplementary Material]]()
 
-|![](face_gif.gif)| ![](image_gif.gif)|<img width=300/>|
-|---|---|---|
+<img src="face_gif.gif" width=360>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="image_gif.gif" width=360>
 
 ![](teaser.jpg)
 
