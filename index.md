@@ -9,7 +9,7 @@ Yu Zeng<sup>1</sup>, Zhe Lin<sup>2</sup>, Vishal M. Patel<sup>1</sup>
 
 <sup>1</sup>Johns Hopkins University, <sup>2</sup>Adobe Research
 
-[[Paper]]() [[Results]](#results) [[Code]](https://github.com/zengxianyu/sketchedit) [[Demo]]() [[Supplementary Material]]()
+[[Paper]]() [[Results]](#results) [[Code]](https://github.com/zengxianyu/sketchedit) [[Demo]](#interactive-demo) [[Supplementary Material]]()
 
 <img src="face_gif.gif" width=360>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="image_gif.gif" width=360>
 
@@ -22,3 +22,7 @@ Sketch-based image manipulation is an interactive image editing task to modify a
 ![](caption.png)
 ![](image_supp.jpg)
 ![](face_supp.jpg)
+
+## Interactive Demo
+
+http://47.57.135.203:8001/
