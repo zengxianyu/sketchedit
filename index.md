@@ -1,4 +1,9 @@
-# SketchEdit: Mask-Free Local Image Manipulation with Partial Sketches
+---
+layout: page
+title: "SketchEdit"
+permalink: /
+---
+## SketchEdit: Mask-Free Local Image Manipulation with Partial Sketches
 
 Yu Zeng, Zhe Lin, Vishal M. Patel
 
