@@ -25,4 +25,4 @@ Sketch-based image manipulation is an interactive image editing task to modify a
 
 ## Interactive Demo
 
-http://47.57.135.203:8001/
+[http://47.57.135.203:8001/](http://47.57.135.203:8001/)
