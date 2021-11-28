@@ -5,9 +5,9 @@ permalink: /
 ---
 ## SketchEdit: Mask-Free Local Image Manipulation with Partial Sketches
 
-Yu Zeng, Zhe Lin, Vishal M. Patel
+Yu Zeng<sup>1</sup>, Zhe Lin<sup>2</sup>, Vishal M. Patel<sup>1</sup>
 
-Johns Hopkins University, Adobe Research
+<sup>1</sup>Johns Hopkins University, <sup>2</sup>Adobe Research
 
 [[Paper]]() [[Results]](#results) [[Code]](https://github.com/zengxianyu/sketchedit) [[Demo]]() [[Supplementary Material]]()
 
