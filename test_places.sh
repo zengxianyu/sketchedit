@@ -1,0 +1,17 @@
+python test.py \
+	--batchSize 1 \
+	--nThreads 1 \
+	--name places \
+	--joint_train_inp \
+	--dataset_mode testimage \
+	--image_dirs ./datasets/general_release/images \
+	--mask_dirs ./datasets/general_release/edges \
+	--image_lists ./datasets/general_release/list.txt \
+	--image_postfix .png \
+	--mask_postfix .png \
+	--model editline2 \
+	--netG deepfillc2 \
+	--pool_type max \
+	--use_cam \
+        --which_epoch latest \
+	--output_dir ./datasets/geneeral_release/results \

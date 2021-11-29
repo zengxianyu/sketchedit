@@ -1,0 +1,17 @@
+name: testcrfill
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.6.12
+  - pytorch=1.3.1
+  - torchvision
+  - tqdm
+  - flask=1.1.2
+  - requests=2.24.0
+  - pillow=8.0.1
+  - pip:
+    - dill==0.3.4
+    - opencv-python==4.5.3.56
+prefix: /home/zeng/anaconda3/envs/editline

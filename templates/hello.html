@@ -1,0 +1,204 @@
+<!doctype html>
+<title>Hello</title>
+{% if is_alert %}
+<script type="text/javascript">
+alert("upload .jpg, .jpeg, .bmp, .png")
+</script>
+{% endif %}
+<!--
+<h2>Upload new file</h2>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+
+<h2> Select brush size</h2>
+Line width : <select id="selWidth">
+    <option value="1">1</option>
+    <option value="2" selected="selected">2</option>
+    <option value="5">5</option>
+    <option value="9">9</option>
+    <option value="13">13</option>
+    <option value="17">17</option>
+    <option value="21">21</option>
+    <option value="42">42</option>
+    <option value="84">84</option>
+</select>
+Option<select id="selColor">
+    <option value="blue" selected="selected">Remove</option>
+</select>
+-->
+<h2> Draw and click submit</h2>
+<form method="post" action="" onsubmit="sendMask();" enctype=multipart/form-data>
+    <input type=submit value="Change Input" name="changeim">
+    <input id="inp_idx" name="im_idx" type="hidden" value={{idx}}>
+    <div><br></div>
+  <input id="inp_msk" name="mask" type="hidden" value="">
+  <input id="inp_img" name="imgname" type="hidden" value="{{image_name}}">
+  <input id="bt_upload" type="submit" value="Submit">
+</form>
+<br>
+<button onclick="javascript:clearArea();return false;">Clear Area</button>
+<div><br></div>
+
+<script src="/static/jquery.min.js" type="text/javascript"></script>
+<style>
+#wrapper{
+    position:relative;
+    width:{{image_width}};
+    height:{{image_height}};
+}
+#myCanvas{
+    position:absolute; top:0px; left:0px;
+    width:{{image_width}};
+    height:{{image_height}};
+    opacity: 1.0;
+}
+</style>
+{% if mask_name %}
+    <h1 id="image_title"> 
+    <input type="radio" name="select_model" value="input_image" onclick="canvas_show_input()" style=""/><font id="image_title_label">Input</font>&nbsp&nbsp
+    {% for opt in list_opt %}
+    <input type="radio" name="select_model" value="result_image" checked="checked" onclick="canvas_show_{{opt}}()" /><font id="result_label_{{opt}}">{{opt}} Result</font>&nbsp&nbsp 
+    {% endfor %}
+    </h1>
+    <script>
+    function canvas_show_input() {
+        var mycanvas = document.getElementById("myCanvas");
+        mycanvas.style.backgroundImage = "url('/static/images/{{image_name}}')"
+        document.getElementById("inp_img").value = "{{image_name}}";
+    }
+    {% for opt in list_opt %}
+    function canvas_show_{{opt}}() {
+        var mycanvas = document.getElementById("myCanvas");
+	mycanvas.style.backgroundImage = "url('/static/results/{{opt}}_{{mask_name}}')"
+	document.getElementById("inp_img").value = "{{opt}}_{{mask_name}}";
+    }
+    function canvas_show_{{opt}}_mask() {
+        var mycanvas = document.getElementById("myCanvas");
+	mycanvas.style.backgroundImage = "url('/static/results/mask_{{opt}}_{{mask_name}}')"
+    }
+    var myradio = document.getElementById("result_label_{{opt}}")
+    {% endfor %}
+    </script>
+<div id="wrapper">
+	<canvas id="canvasBottom" width={{image_width}} height={{image_height}}></canvas>
+	<canvas id="myCanvas" width={{image_width}} height={{image_height}}></canvas>
+</div>
+    <!--
+        <canvas id="myCanvas" width="{{image_width}}" height="{{image_height}}" style="border:2px solid black;background: url('/static/results/result_{{mask_name}}')">
+    </canvas>
+    -->
+    {% for opt in list_opt %}
+    <style>
+    #canvasBottom{
+        position:absolute; top:0px; left:0px;
+        width:{{image_width}};
+        height:{{image_height}};
+        background: url('/static/results/{{opt}}_{{mask_name}}')
+    }
+    </style>
+    {% endfor %}
+{% else %}
+<div id="wrapper">
+	<canvas id="canvasBottom" width={{image_width}} height={{image_height}}"></canvas>
+	<canvas id="myCanvas" width={{image_width}} height={{image_height}}></canvas>
+</div>
+<!--
+    <canvas id="myCanvas" width="{{image_width}}" height="{{image_height}}" style="border:2px solid black;background: url('/static/images/{{image_name}}')">
+    </canvas>
+-->
+<style>
+#canvasBottom{
+    position:absolute; top:0px; left:0px;
+    width:{{image_width}};
+    height:{{image_height}};
+    background: url('/static/images/{{image_name}}')
+}
+</style>
+{% endif %}
+
+<script type="text/javascript">
+// send mask to server
+function sendMask() {
+   var canvas = document.getElementById('myCanvas');
+   document.getElementById('inp_msk').value = canvas.toDataURL();
+}
+// draw on canvas
+var mousePressed = false;
+var lastX, lastY;
+var ctx;
+
+function InitThis() {
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext("2d");
+
+    $('#myCanvas').mousedown(function (e) {
+        mousePressed = true;
+        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+    });
+
+    $('#myCanvas').mousemove(function (e) {
+        if (mousePressed) {
+            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+        }
+    });
+
+    $('#myCanvas').mouseup(function (e) {
+        mousePressed = false;
+    });
+    $('#myCanvas').mouseleave(function (e) {
+    mousePressed = false;
+    });
+
+    // touch 
+    // Set up touch events for mobile, etc
+    canvas.addEventListener("touchstart", function (e) {
+      e.preventDefault();
+      var touch = e.touches[0];
+      var mouseEvent = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(mouseEvent);
+    }, false);
+    canvas.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      var mouseEvent = new MouseEvent("mouseup", {});
+      canvas.dispatchEvent(mouseEvent);
+    }, false);
+    canvas.addEventListener("touchmove", function (e) {
+      e.preventDefault();
+      var touch = e.touches[0];
+      var mouseEvent = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(mouseEvent);
+    }, false);
+}
+
+function Draw(x, y, isDown) {
+    if (isDown) {
+        ctx.beginPath();
+        ctx.strokeStyle = "blue"//$('#selColor').val();
+        ctx.lineWidth = "2"//$('#selWidth').val();
+        ctx.lineJoin = "round";
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    lastX = x; lastY = y;
+}
+	
+function clearArea() {
+    // Use the identity matrix while convnetmas clearing the canvas
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+}
+
+</script>
+<script type="text/javascript">
+InitThis();
+</script>
