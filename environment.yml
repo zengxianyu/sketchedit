@@ -1,4 +1,4 @@
-name: testcrfill
+name: editline
 channels:
   - pytorch
   - defaults
