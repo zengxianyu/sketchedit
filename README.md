@@ -1,6 +1,6 @@
 ## SketchEdit: Mask-Free Local Image Manipulation with Partial Sketches
 
-[[Paper]]()&emsp; [[Project Page]](https://zengxianyu.github.io/sketchedit/)&emsp; [[Interactive Demo]](#interactive-demo)&emsp; [[Supplementary Material]]()
+[[Paper]](https://arxiv.org/pdf/2111.15078.pdf)&emsp; [[Project Page]](https://zengxianyu.github.io/sketchedit/)&emsp; [[Interactive Demo]](#interactive-demo)&emsp; [[Supplementary Material]]()
 
 <img src="https://github.com/zengxianyu/sketchedit/raw/main/face_gif.gif" width=360>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/zengxianyu/sketchedit/raw/main/image_gif.gif" width=360>&emsp;
 
