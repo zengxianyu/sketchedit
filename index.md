@@ -9,7 +9,7 @@ Yu Zeng<sup>1</sup>, Zhe Lin<sup>2</sup>, Vishal M. Patel<sup>1</sup>
 
 <sup>1</sup>Johns Hopkins University, <sup>2</sup>Adobe Research
 
-[[Paper]]()&emsp; [[Code]](https://github.com/zengxianyu/sketchedit)&emsp; [[Online Demo]](#interactive-demo)&emsp; [[Supplementary Material]]()
+[[Paper]](https://arxiv.org/pdf/2111.15078.pdf)&emsp; [[Code]](https://github.com/zengxianyu/sketchedit)&emsp; [[Online Demo]](#interactive-demo)&emsp; [[Supplementary Material]]()
 
 <img src="face_gif.gif" width=360>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="image_gif.gif" width=360>&emsp;
 
