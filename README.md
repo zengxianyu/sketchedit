@@ -4,6 +4,14 @@
 
 <img src="https://github.com/zengxianyu/sketchedit/raw/main/face_gif.gif" width=360>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/zengxianyu/sketchedit/raw/main/image_gif.gif" width=360>&emsp;
 
+## Update
+- [x] :new: Uploading custom photos are now enabled in the demo 
+- [x] :new: Edit face in a fullbody/upper body photo
+<img src="https://github.com/zengxianyu/sketchedit/blob/main/example_body.jpg" width=640>
+
+- [ ] Enable general scenes editing in the demo (maybe use a classfier to automatically switch models for face/scenes editing?)
+- [ ] Exposing predicted mask & mask revising? 
+
 ## Usage
 
 ### environment 
