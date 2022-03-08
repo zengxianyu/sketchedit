@@ -67,7 +67,17 @@ chmod +x download/*
 [http://47.57.135.203:8001/](http://47.57.135.203:8001/)
 
 ## Training code and data
-Training code and data will be released after the paper is published. 
+Training code and data is coming soon
+
+## Citation
+```
+@inproceedings{zeng2022sketchedit,
+  title={SketchEdit: Mask-Free Local Image Manipulation with Partial Sketches},
+  author={Zeng, Yu and Lin, Zhe and Patel, Vishal M.},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  year={2022}
+}
+```
 
 ## Acknowledgments
 * DeepFill https://github.com/jiahuiyu/generative_inpainting
