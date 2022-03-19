@@ -5,6 +5,12 @@
 <img src="https://github.com/zengxianyu/sketchedit/raw/main/face_gif.gif" width=360>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/zengxianyu/sketchedit/raw/main/image_gif.gif" width=360>&emsp;
 
 ## Update
+
+Star this project to get notified.
+<p align="center">
+  <a href="#"><img src="https://user-images.githubusercontent.com/11280511/150838003-01136487-6671-4cc4-ae4d-bef8e60c605e.png"></a>
+</p>
+
 - [x] :new: Uploading custom photos are now enabled in the demo 
 - [x] :new: Edit face in a fullbody/upper body photo
 <img src="https://github.com/zengxianyu/sketchedit/blob/main/example_body.jpg" width=640>
@@ -67,7 +73,11 @@ chmod +x download/*
 [http://47.57.135.203:8001/](http://47.57.135.203:8001/)
 
 ## Training code and data
-Training code and data is coming soon
+Training code and data is coming soon. Star this project to get notified.
+
+<p align="center">
+  <a href="#"><img src="https://user-images.githubusercontent.com/11280511/150838003-01136487-6671-4cc4-ae4d-bef8e60c605e.png"></a>
+</p>
 
 ## Citation
 ```
