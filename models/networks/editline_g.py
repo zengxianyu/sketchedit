@@ -9,6 +9,7 @@ from torch.nn.functional import normalize
 from models.networks.base_network import BaseNetwork
 from models.networks.utils import gen_conv, gen_deconv, dis_conv
 from models.networks.splitcam import ReduceContextAttentionP1, ReduceContextAttentionP2
+from models.networks.co_mod_gan import Generator_IJ as CoModGANIJGenerator
 
 class DeepFillC2Generator(BaseNetwork):
     @staticmethod
