@@ -72,7 +72,7 @@ def process_image(img, mask, name, opt, save_to_input=True):
     if save_to_input:
         result.save(f"static/images/{name}")
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route(f'/{opt.sublabel}', methods=['GET', 'POST'])
 def hello(name=None):
     if 'changeim' in request.form:
         idx = request.form['im_idx']

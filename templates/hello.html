@@ -2,16 +2,19 @@
 <title>Hello</title>
 {% if is_alert %}
 <script type="text/javascript">
-alert("upload .jpg, .jpeg, .bmp, .png")
+alert("not a valid image ( .jpg, .jpeg, .bmp, .png) or no face detected")
 </script>
 {% endif %}
-<!--
+
+{% if is_upload %}
 <h2>Upload new file</h2>
     <form action="" method=post enctype=multipart/form-data>
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
+{% endif %}
 
+<!--
 <h2> Select brush size</h2>
 Line width : <select id="selWidth">
     <option value="1">1</option>
@@ -182,7 +185,7 @@ function Draw(x, y, isDown) {
     if (isDown) {
         ctx.beginPath();
         ctx.strokeStyle = "blue"//$('#selColor').val();
-        ctx.lineWidth = "2"//$('#selWidth').val();
+        ctx.lineWidth = '1'//$('#selWidth').val();
         ctx.lineJoin = "round";
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(x, y);

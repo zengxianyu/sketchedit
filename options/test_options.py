@@ -5,6 +5,7 @@ class TestOptions(BaseOptions):
     def initialize(self, parser):
         BaseOptions.initialize(self, parser)
         parser.add_argument('--dataset_mode', type=str, default='base')
+        parser.add_argument('--sublabel', type=str, default='')
         parser.add_argument('--port', type=int, default=9998)
         parser.add_argument('--filelist', type=str, default='./static/images/example.txt', help='saves results here.')
         parser.add_argument('--results_dir', type=str, default='./results/', help='saves results here.')
