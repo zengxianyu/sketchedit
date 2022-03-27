@@ -10,12 +10,13 @@ from models.networks.base_network import BaseNetwork
 from models.networks.utils import gen_conv, gen_deconv, dis_conv
 from models.networks.splitcam import ReduceContextAttentionP1, ReduceContextAttentionP2
 
+
 class DeepFillC2Generator(BaseNetwork):
     @staticmethod
     def modify_commandline_options(parser, is_train):
         parser.add_argument('--use_cam', action='store_true',
                             help="use context attention module")
-        parser.add_argument('--pool_type', default='avg',
+        parser.add_argument('--pool_type', default='max',
                             help="use context attention module")
         parser.add_argument('--no_mask_cc', action='store_true',
                             help="use context attention module")
@@ -25,10 +26,8 @@ class DeepFillC2Generator(BaseNetwork):
     def __init__(self, opt):
         super(DeepFillC2Generator, self).__init__()
         self.opt = opt
-        self.no_mask_coarse = opt.no_mask_coarse
         self.pool_type = opt.pool_type
         self.use_cam = opt.use_cam
-        self.no_mask_cc = opt.no_mask_cc
         cnum = 48
         self.cnum = cnum
         rate = 1
@@ -116,11 +115,8 @@ class DeepFillC2Generator(BaseNetwork):
             return []
 
 
-    def forward(self, x, x2, mask, mask2, guide=None):
-        if self.no_mask_cc:
-            x2 = x2
-        else:
-            x2 = x2*mask2
+    def forward(self, x, x2, mask, mask2, guide=None, guide2=None):
+        x2 = x2*mask2
         x = x*(1-mask)
         xin = x
         bsize, ch, height, width = x.shape
@@ -128,11 +124,13 @@ class DeepFillC2Generator(BaseNetwork):
             ones_x = torch.ones(bsize, 1, height, width).to(x.device)
         else:
             ones_x = guide
+        ones_x2 = torch.ones(bsize, 1, height, width).to(x.device)
+        #if guide2 is None:
+        #    ones_x2 = torch.ones(bsize, 1, height, width).to(x.device)
+        #else:
+        #    ones_x2 = guide2
         x = torch.cat([x, ones_x, mask], 1)
-        if self.opt.joint_train_inp:
-            x2 = torch.cat([x2, ones_x*0, mask2], 1)
-        else:
-            x2 = torch.cat([x2, ones_x, mask2], 1)
+        x2 = torch.cat([x2, ones_x2, mask2], 1)
         # two stage network
         ## stage1
         x = self.conv1(x)
@@ -176,8 +174,7 @@ class DeepFillC2Generator(BaseNetwork):
         x = torch.tanh(x)
         x_stage1 = x
 
-        if not  self.no_mask_coarse:
-            x = x*mask + xin[:, 0:3, :, :]*(1.-mask)
+        x = x*mask + xin[:, 0:3, :, :]*(1.-mask)
         xnow = x
 
         ###

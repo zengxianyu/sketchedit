@@ -4,9 +4,9 @@ python test.py \
 	--name places \
 	--joint_train_inp \
 	--dataset_mode testimage \
-	--image_dirs ./datasets/general_release/images \
-	--mask_dirs ./datasets/general_release/edges \
-	--image_lists ./datasets/general_release/list.txt \
+	--image_dirs /home/zeng/data/datasets/inpainting/places2samples1k/places2samples1k_crop256_png \
+	--mask_dirs /home/zeng/data/editline_data/places1k/edge_9 \
+	--image_lists /home/zeng/data/datasets/inpainting/places2samples1k/imagelist.txt \
 	--image_postfix .png \
 	--mask_postfix .png \
 	--model editline2 \
@@ -14,4 +14,5 @@ python test.py \
 	--pool_type max \
 	--use_cam \
         --which_epoch latest \
-	--output_dir ./datasets/geneeral_release/results \
+	--output_dir /home/zeng/data/editline_data/places1k/results/9 \
+	#--output_mask_dir /home/zeng/data/editline_results/v2/placessketch512/v2_masks \

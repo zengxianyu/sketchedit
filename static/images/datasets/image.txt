@@ -1,4 +1,0 @@
-datasets/general_release/images/854.png
-datasets/general_release/images/11.png
-datasets/general_release/images/556.png
-datasets/general_release/images/830.png
