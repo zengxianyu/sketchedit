@@ -9,7 +9,9 @@ alert("not a valid image ( .jpg, .jpeg, .bmp, .png) or no face detected")
 {% if is_upload %}
 <h2>Upload new file</h2>
     <form action="" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
+      <p>
+        <input id="inp_idx" name="im_idx" type="hidden" value={{idx}}>
+      <input type=file name=file>
          <input type=submit value=Upload>
     </form>
 {% endif %}
