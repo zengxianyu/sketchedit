@@ -4,6 +4,8 @@ from .base_options import BaseOptions
 class TestOptions(BaseOptions):
     def initialize(self, parser):
         BaseOptions.initialize(self, parser)
+        parser.add_argument('--load_opt_face', type=str, required=False)
+        parser.add_argument('--load_opt_img', type=str, required=False)
         parser.add_argument('--dataset_mode', type=str, default='base')
         parser.add_argument('--sublabel', type=str, default='')
         parser.add_argument('--port', type=int, default=9998)
