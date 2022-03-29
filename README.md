@@ -15,7 +15,7 @@ Star this project to get notified.
 - [x] :new: Edit face in a fullbody/upper body photo
 <img src="https://github.com/zengxianyu/sketchedit/blob/main/example_body.jpg" width=640>
 
-- [ ] Enable general scenes editing in the demo (maybe use a classfier to automatically switch models for face/scenes editing?)
+- [x] Enable general scenes editing in the demo
 - [ ] Exposing predicted mask & mask revising? 
 
 ## Usage
