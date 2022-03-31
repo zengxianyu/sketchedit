@@ -50,7 +50,7 @@ list_examples = [n.strip("\n") for n in list_examples]
 
 h_face = 256
 w_face = 256
-lms_avg = np.load("/home/zeng/celebhq256x256/lms_avg_dense.npy")
+lms_avg = np.load("./lms_avg_dense.npy")
 c_avg = lms_avg.mean(0)[None,...]
 lms_avg_ctr = lms_avg-c_avg
 
