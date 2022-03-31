@@ -32,7 +32,7 @@ model_face.eval()
 model_img = models.create_model(opt_img)
 model_img.eval()
 
-max_size = 2048
+max_size = 1024
 max_num_examples = 200
 UPLOAD_FOLDER = 'static/images'
 app = Flask(__name__)
