@@ -2,7 +2,7 @@
 
 [[Paper]](https://arxiv.org/pdf/2111.15078.pdf)&emsp; [[Project Page]](https://zengxianyu.github.io/sketchedit/)&emsp; [[Interactive Demo]](#interactive-demo)&emsp; [[Supplementary Material]](https://maildluteducn-my.sharepoint.com/:b:/g/personal/zengyu_mail_dlut_edu_cn/ESb6N92zHRNIs0yvnvhQ9mYBbyHydraEw4ZiTyJYYv5GXA?e=hLGnLq)
 
-<img src="https://zengxianyu2.oss-us-east-1.aliyuncs.com/face_gif.gif" width=360>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://zengxianyu2.oss-us-east-1.aliyuncs.com/image_gif.gif" width=360>&emsp;
+![img]("https://i.ibb.co/VW5x7Fb/image-gif.gif")
 
 ## Update
 
